@@ -10,25 +10,27 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
         # и т.д. в файле design.py
         super().__init__()
         self.setupUi(self)  # Это нужно для инициализации нашего дизайна
-        self.TransBut.clicked.connect(self.text_output())
+        self.TransBut.clicked.connect(self.text_output)
 
     def text_output(self):
-        self.OutText.plainTextEdit.setText(
-            str(self.serial_code(self.InText.toPlainText())))
+        self.OutText.setText(
+            str(self.serial_code(str(self.InText.toPlainText()))))
 
-    def serial_code(self, str):
+    def serial_code(self, _str):
         # Функциональная часть приложения
         count = ''
-        for s in str:
+        ans = ''
+        for s in _str:
             if s.isdigit():
                 count = count + s
             else:
                 if count == '':
-                    print(s, end='')
+                    ans += s
                 else:
                     for i in range(0, int(count)):
-                        print(s, end='')
+                        ans += s
                 count = ''
+        return ans
 
 
 def main():
@@ -36,7 +38,7 @@ def main():
     window = ExampleApp()  # Создаём объект класса ExampleApp
     window.show()  # Показываем окно
     app.exec_()  # и запускаем приложение
-    print(ExampleApp.text_input)
+
 
 if __name__ == '__main__':  # Если мы запускаем файл напрямую, а не импортируем
     main()  # то запускаем функцию main()
