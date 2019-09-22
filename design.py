@@ -25,14 +25,14 @@ class Ui_MainWindow(object):
         self.TransBut.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.TransBut.setObjectName("TransBut")
         self.verticalLayout.addWidget(self.TransBut)
-        self.OutText = QtWidgets.QTextBrowser(self.centralwidget)
+        self.OutText = QtWidgets.QTextEdit(self.centralwidget)
         self.OutText.setObjectName("OutText")
         self.verticalLayout.addWidget(self.OutText)
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 384, 21))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
+        self.menuBar = QtWidgets.QMenuBar(MainWindow)
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 384, 21))
+        self.menuBar.setObjectName("menuBar")
+        MainWindow.setMenuBar(self.menuBar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -42,5 +42,5 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("Serial Code Translator", "Serial Code Translator"))
-        self.TransBut.setText(_translate("Serial Code Translator", "Translate"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Serial Code Translator"))
+        self.TransBut.setText(_translate("MainWindow", "Translate"))
