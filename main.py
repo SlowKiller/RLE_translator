@@ -1,6 +1,7 @@
 import sys  # sys нужен для передачи argv в QApplication
 from PyQt5 import QtWidgets
 import design  # Это наш конвертированный файл дизайна
+import psutil
 
 
 class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
@@ -9,9 +10,13 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
         # и т.д. в файле design.py
         super().__init__()
         self.setupUi(self)  # Это нужно для инициализации нашего дизайна
-        self.TransBut.clicked.connect(self.serial_code)
+        self.TransBut.clicked.connect(self.text_output())
 
-    def serial_code(str):
+    def text_output(self):
+        self.OutText.plainTextEdit.setText(
+            str(self.serial_code(self.InText.toPlainText())))
+
+    def serial_code(self, str):
         # Функциональная часть приложения
         count = ''
         for s in str:
@@ -31,7 +36,7 @@ def main():
     window = ExampleApp()  # Создаём объект класса ExampleApp
     window.show()  # Показываем окно
     app.exec_()  # и запускаем приложение
-
+    print(ExampleApp.text_input)
 
 if __name__ == '__main__':  # Если мы запускаем файл напрямую, а не импортируем
     main()  # то запускаем функцию main()
