@@ -9,21 +9,21 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
         # и т.д. в файле design.py
         super().__init__()
         self.setupUi(self)  # Это нужно для инициализации нашего дизайна
+        self.TransBut.clicked.connect(self.serial_code)
 
-
-def serial_code(stroke):
-    # Функциональная часть приложения
-    count = ''
-    for s in stroke:
-        if s.isdigit():
-            count = count + s
-        else:
-            if count == '':
-                print(s, end='')
+    def serial_code(str):
+        # Функциональная часть приложения
+        count = ''
+        for s in str:
+            if s.isdigit():
+                count = count + s
             else:
-                for i in range(0, int(count)):
+                if count == '':
                     print(s, end='')
-            count = ''
+                else:
+                    for i in range(0, int(count)):
+                        print(s, end='')
+                count = ''
 
 
 def main():
