@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(384, 436)
+        MainWindow.resize(477, 512)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
@@ -28,11 +28,12 @@ class Ui_MainWindow(object):
         self.OutText = QtWidgets.QTextEdit(self.centralwidget)
         self.OutText.setObjectName("OutText")
         self.verticalLayout.addWidget(self.OutText)
+        self.Direction = QtWidgets.QComboBox(self.centralwidget)
+        self.Direction.setObjectName("Direction")
+        self.Direction.addItem("")
+        self.Direction.addItem("")
+        self.verticalLayout.addWidget(self.Direction)
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menuBar = QtWidgets.QMenuBar(MainWindow)
-        self.menuBar.setGeometry(QtCore.QRect(0, 0, 384, 21))
-        self.menuBar.setObjectName("menuBar")
-        MainWindow.setMenuBar(self.menuBar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -42,5 +43,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Serial Code Translator"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "RLE Code Translator"))
         self.TransBut.setText(_translate("MainWindow", "Translate"))
+        self.Direction.setItemText(0, _translate("MainWindow", "Сжимать"))
+        self.Direction.setItemText(1, _translate("MainWindow", "Разжимать"))

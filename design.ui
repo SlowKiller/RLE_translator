@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>384</width>
-    <height>436</height>
+    <width>477</width>
+    <height>512</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Serial Code Translator</string>
+   <string>RLE Code Translator</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -31,17 +31,21 @@
     <item>
      <widget class="QTextEdit" name="OutText"/>
     </item>
+    <item>
+     <widget class="QComboBox" name="Direction">
+      <item>
+       <property name="text">
+        <string>Сжимать</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Разжимать</string>
+       </property>
+      </item>
+     </widget>
+    </item>
    </layout>
-  </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>384</width>
-     <height>21</height>
-    </rect>
-   </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
