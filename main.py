@@ -9,24 +9,22 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
         # Это здесь нужно для доступа к переменным, методам
         # и т.д. в файле design.py
         super().__init__()
-        self.setupUi(self)  # Это нужно для инициализации нашего дизайна
-        self.TransBut.clicked.connect(self.text_output)
+        self.setupUi(self)                                  # Это нужно для инициализации нашего дизайна
+        self.TransBut.clicked.connect(self.text_output)     # Привязываем функцию tex_output к кнопке Translate
 
-    def text_output(self):
-        # self.OutText.setText(
-        #     str(self.serial_code(str(self.InText.toPlainText()))))
+    def text_output(self):                                  # Выходная функция файла
         if self.set_direction(self.Direction.currentText()):
-            self.OutText.setText(str(self.serial_code_2(str(self.InText.toPlainText()))))
+            self.OutText.setText(str(self.uncode(str(self.InText.toPlainText()))))
         else:
-            self.OutText.setText(str(self.serial_code(str(self.InText.toPlainText()))))
+            self.OutText.setText(str(self.code(str(self.InText.toPlainText()))))
 
-    def set_direction(self, combo_box_set):
+    def set_direction(self, combo_box_set):                 # Управление направлением кодирования
         if "Сжимать" == combo_box_set:
             return True
         else:
             return False
 
-    def serial_code(self, _str):
+    def code(self, _str):                                   # Функция, разжимающая данные
         # Функциональная часть приложения
         count = ''
         ans = ''
@@ -42,7 +40,7 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
                 count = ''
         return ans
 
-    def serial_code_2(self, _str):
+    def uncode(self, _str):                                 # Функция, сжимающая данные
         count = 1
         ans = ''
         for i in range(1, len(_str)):
