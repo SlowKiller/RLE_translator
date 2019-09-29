@@ -32,6 +32,23 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
                 count = ''
         return ans
 
+    def serial_code_2(self, _str):
+        count = 1
+        ans = ''
+        for i in range(1, len(_str)):
+            if _str[i] == _str[i - 1]:
+                count += 1
+            else:
+                if count > 1:
+                    ans += str(count)
+                ans += _str[i - 1]
+                count = 1
+
+        if count > 1:
+            ans += str(count)
+        ans += _str[-1]
+        return ans
+
 
 def main():
     app = QtWidgets.QApplication(sys.argv)  # Новый экземпляр QApplication
