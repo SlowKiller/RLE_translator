@@ -13,8 +13,18 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
         self.TransBut.clicked.connect(self.text_output)
 
     def text_output(self):
-        self.OutText.setText(
-            str(self.serial_code(str(self.InText.toPlainText()))))
+        # self.OutText.setText(
+        #     str(self.serial_code(str(self.InText.toPlainText()))))
+        if self.set_direction(self.Direction.currentText()):
+            self.OutText.setText(str(self.serial_code_2(str(self.InText.toPlainText()))))
+        else:
+            self.OutText.setText(str(self.serial_code(str(self.InText.toPlainText()))))
+
+    def set_direction(self, combo_box_set):
+        if "Сжимать" == combo_box_set:
+            return True
+        else:
+            return False
 
     def serial_code(self, _str):
         # Функциональная часть приложения
