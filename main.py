@@ -4,7 +4,7 @@ import design  # Это наш конвертированный файл диз�
 import psutil
 
 
-class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
+class WorkWindow(QtWidgets.QMainWindow, design.Ui_MainWindow):
     def __init__(self):
         # Это здесь нужно для доступа к переменным, методам
         # и т.д. в файле design.py
@@ -60,7 +60,7 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
 
 def main():
     app = QtWidgets.QApplication(sys.argv)  # Новый экземпляр QApplication
-    window = ExampleApp()  # Создаём объект класса ExampleApp
+    window = WorkWindow()  # Создаём объект класса ExampleApp
     window.show()  # Показываем окно
     app.exec_()  # и запускаем приложение
 
