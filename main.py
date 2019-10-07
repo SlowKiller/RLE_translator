@@ -58,7 +58,7 @@ class WorkWindow(QtWidgets.QMainWindow, design.Ui_MainWindow):  # Основно
         return ans
 
 
-class HelloWindow(QtWidgets.QMainWindow, welcome.Ui_Welcome_Page):      # Окно приветствия
+class HelloWindow(QtWidgets.QMainWindow, welcome.Ui_HelloWindow):      # Окно приветствия
     def __init__(self, parent=None):                                    # Инициализация, наследование
         super().__init__(parent)
         self.setupUi(self)
