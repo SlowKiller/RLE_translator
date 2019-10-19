@@ -8,6 +8,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtCore import Qt
 
 
 class Ui_MainWindow(object):
@@ -47,3 +48,7 @@ class Ui_MainWindow(object):
         self.TransBut.setText(_translate("MainWindow", "Translate"))
         self.Direction.setItemText(0, _translate("MainWindow", "Сжимать"))
         self.Direction.setItemText(1, _translate("MainWindow", "Разжимать"))
+
+    def keyPressEvent(self, e):
+        if e.key() == Qt.Key_Escape:
+            self.close()
