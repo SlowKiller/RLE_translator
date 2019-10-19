@@ -10,7 +10,7 @@ class WorkWindow(QtWidgets.QMainWindow, design.Ui_MainWindow):  # Основно
         # и т.д. в файле design.py
         super().__init__(parent)
         self.setupUi(self)                                      # Это нужно для инициализации нашего дизайна
-        self.TransBut.clicked.connect(self.text_output)         # Привязываем функцию texе_output к кнопке Translate
+        self.TransBut.clicked.connect(self.text_output)         # Привязываем функцию text_output к кнопке Translate
 
     def text_output(self):                                      # Выходная функция кодирования
         if self.set_direction(self.Direction.currentText()):
@@ -85,8 +85,7 @@ def main():
     app = QtWidgets.QApplication(sys.argv)  # Новый экземпляр QApplication
     window = HelloWindow()  # Создаём объект класса WorkWindow
     window.show()  # Показываем окно
-    app.exec_()
-
+    sys.exit(app.exec_())
 
 if __name__ == '__main__':  # Если мы запускаем файл напрямую, а не импортируем
     main()  # то запускаем функцию main()
