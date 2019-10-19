@@ -8,7 +8,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from PyQt5.QtCore import Qt
 
 class Ui_HelloWindow(object):
     def setupUi(self, HelloWindow):
@@ -204,3 +204,7 @@ class Ui_HelloWindow(object):
         self.Choose_text.setText(_translate("HelloWindow", "Выберете стиль кодирования"))
         self.Code_But.setText(_translate("HelloWindow", "Сжимать"))
         self.Uncode_But.setText(_translate("HelloWindow", "Разжимать"))
+
+    def keyPressEvent(self, e):
+        if e.key() == Qt.Key_Escape:
+            self.close()
