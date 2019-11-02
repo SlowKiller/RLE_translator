@@ -10,8 +10,14 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import Qt
 
+import exit
+
 
 class Ui_MainWindow(object):
+    def __init__(self):
+        self.window = None
+        self._closable = False
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(477, 512)
@@ -51,4 +57,13 @@ class Ui_MainWindow(object):
 
     def keyPressEvent(self, e):
         if e.key() == Qt.Key_Escape:
+            self.window = exit.ExitDialog()
+            self.window.show()
+
+    def closeEvent(self, evnt):
+        if self._closable:
             self.close()
+        else:
+            evnt.ignore()
+            self.window = exit.ExitDialog()
+            self.window.show()
