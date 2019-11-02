@@ -83,9 +83,10 @@ class HelloWindow(QtWidgets.QMainWindow, welcome.Ui_HelloWindow):      # Окн�
 
 def main():
     app = QtWidgets.QApplication(sys.argv)  # Новый экземпляр QApplication
-    window = HelloWindow()  # Создаём объект класса WorkWindow
+    window = HelloWindow()  # Создаём объект класса HelloWindow
     window.show()  # Показываем окно
     sys.exit(app.exec_())
+
 
 if __name__ == '__main__':  # Если мы запускаем файл напрямую, а не импортируем
     main()  # то запускаем функцию main()
