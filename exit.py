@@ -9,8 +9,8 @@ class ExitDialog(QtWidgets.QDialog, exit_dialog.Ui_ExitDialog):
     def __init__(self, parent=None):                                    # Инициализация, наследование
         super().__init__(parent)
         self.setupUi(self)
-        self.NoBut.clicked.connect(self.close_exit_dialog)           # Привязываем функцию tex_output к кнопке Code
-        self.YesBut.clicked.connect(self.close_all)       # Привязываем функцию tex_output к кнопке Uncode
+        self.NoBut.clicked.connect(self.close_exit_dialog)
+        self.YesBut.clicked.connect(self.close_all)
 
     def close_exit_dialog(self):
         self.close()
