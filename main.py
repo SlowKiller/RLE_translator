@@ -69,6 +69,7 @@ class HelloWindow(QtWidgets.QMainWindow, welcome.Ui_HelloWindow):      # Окн�
     def close_window_code(self):                                        # Обработка кнопки "Сжимать"
         if not self.WorkWin:                                            # Инициализация рабочего окна
             self.WorkWin = WorkWindow(self)
+        self.ind = 1
         self.close()                                                    # Закрыли окно приветствия
         self.WorkWin.show()
         self.WorkWin.Direction.setCurrentIndex(0)                       # Установили в ComboBox настройку сжимать
@@ -76,9 +77,10 @@ class HelloWindow(QtWidgets.QMainWindow, welcome.Ui_HelloWindow):      # Окн�
     def close_window_uncode(self):                                      # Обработка кнопки "Разжимать"
         if not self.WorkWin:
             self.WorkWin = WorkWindow(self)
+        self.ind = 1
         self.close()
         self.WorkWin.show()
-        self.WorkWin.Direction.setCurrentIndex(1)                       # Установили в ComboBox настройку сжимать
+        self.WorkWin.Direction.setCurrentIndex(1)                       # Установили в ComboBox настройку разжимать
 
 
 def main():

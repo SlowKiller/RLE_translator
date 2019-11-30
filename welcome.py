@@ -16,7 +16,8 @@ import exit
 class Ui_HelloWindow(object):
     def __init__(self):
         self.window = None
-        self._closable = False
+        self.ind = 0
+        # self._closable = False
 
     def setupUi(self, HelloWindow):
         HelloWindow.setObjectName("HelloWindow")
@@ -217,10 +218,10 @@ class Ui_HelloWindow(object):
             self.window = exit.ExitDialog()
             self.window.show()
 
-    def closeEvent(self, evnt):
-        if self._closable:
+    def closeEvent(self, event):
+        if self.ind == 1:
             self.close()
         else:
-            evnt.ignore()
+            event.ignore()
             self.window = exit.ExitDialog()
             self.window.show()
