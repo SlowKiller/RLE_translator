@@ -1,15 +1,22 @@
-Приложение обрабатывает входную строку по RLE кодированию или декодированию.
+## RLE coder-encoder
+Simple program to compress or decompress data wit using run-length encoding (RLE).
 
-Планы по доработке функционала:
-1. DONE Добавить переключатель между кодировками Serial_code и serial_code2
-2. DONE Обработка кнопки esc
-3. DONE Добавить возможность переключаться между вариантами кодировки на 
-	рабочем окне
-4. DONE Поиграться со шрифтами и кеглем в TextEditor-ах
-5. DONE Добавить окно приветствия с выбором режима работы.
-6. Добавить окно предупреждения перед выходом.
-7. Добавить возможность вызвать последнюю обработанную пару символов.
+***Example: aaaaabcccccc -> 5ab6c***
 
-Реализация:
-Запуск -> Окно приветствия и выбор кодирования ->
--> Переключение на окно кодировки
+More about RLE on [Wikipedia](http://en.wikipedia.org/wiki/Run-length_encoding/ "Go to wikipedia")
+
+Interface and commits in russian language
+
+**Warning**: 'No' button doesnt work correct, its a bag.
+
+### Inside
+- main.py - program logic of the Main and Welcome windows
+- exit.py - program logic of the Exit window
+- design.py - GUI interface of Main window (Qt)
+- welcome.py - GUI interface of Welcome window (Qt)
+- exit_dialog.py - GUI interface of Exit window (Qt)
+- *.ui - QtDesigner files
+- serial_code.py - debug file for encoding, doesnt use in main release
+- 
+### How to use
+- launch main.y
